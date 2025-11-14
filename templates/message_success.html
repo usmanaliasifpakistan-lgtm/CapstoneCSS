@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent successfully</title>
+                {% include "header.html" %}
+</head>
+<body>
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename = 'assets/img/contact-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Yahooooooooo!!!</h1>
+                            <span class="subheading">Hello {{user_data.name}}, Your message has been sent successfully.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+
+<footer class="border-top">
+            {% include "footer.html" %}
+        </footer>
+<!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for ('static', filename = 'js/scripts.js' ) }}"></script>
+</body>
+</html>

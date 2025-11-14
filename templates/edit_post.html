@@ -1,0 +1,56 @@
+{% extends "bootstrap/base.html" %}
+
+
+        {% block title %} New Post {% endblock %}
+        
+        {% block head %}
+        
+            {% include "header.html" %}
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='body') }}
+        
+        {% endblock %}
+         
+
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ url_for('static', filename = 'assets/img/post-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading" style="text-align: center;">
+                            <h1>Edit Post</h1>
+                            You are gonna be a great editor!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- New Post-->
+
+        <div class="container px-4 px-lg-5">
+            <form class="form form-horizontal" method="post" role="form">
+                                        {{ form.csrf_token }} {{ form.hidden_tag() }}
+                                        {{ form.title.label }}<br>
+                                        {{ form.title() }}<br>
+                                        {{ form.subtitle.label }}<br>
+                                        {{ form.subtitle() }}<br>
+                                        
+                                        {{ form.img_url.label }}<br>
+                                        {{ form.img_url() }}<br>
+                                        {{ form.body.label }}<br>
+                                        {{ form.body() }}<br>
+                                        {{ form.submit() }}
+                                    </form>
+                                    
+        </div>  
+        <!-- Footer-->
+         <footer class="border-top">
+            {% include "footer.html" %}
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for ('static', filename = 'js/scripts.js' ) }}"></script>
+{% endblock %}
